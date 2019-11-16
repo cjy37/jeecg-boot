@@ -4,6 +4,27 @@ Jeecg-Boot 快速开发平台
 当前最新版本： 2.1.1（发布日期：20191021）
 
 
+## 动态数据源使用
+http://doc.jeecg.com/1273932
+
+## jeecg-boot新建module模块
+https://my.oschina.net/u/3903209/blog/3083399?tdsourcetag=s_pctim_aiomsg
+
+## Online表单数据权限
+https://jeecg-boot.mydoc.io/?t=345718
+
+## Online表单权限配置按钮/列的显示或隐藏
+https://jeecg-boot.mydoc.io/?t=345719
+
+## 按钮的显示/隐藏
+https://jeecg-boot.mydoc.io/?t=345719
+
+## 列表过滤
+https://jeecg-boot.mydoc.io/?t=345718
+
+## 系统数据权限用法(列表过滤)
+https://jeecg-boot.mydoc.io/?t=345676
+
 ## 后端技术架构
 - 基础框架：Spring Boot 2.1.3.RELEASE
 

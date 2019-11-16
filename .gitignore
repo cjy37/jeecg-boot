@@ -1,0 +1,8 @@
+﻿jeecg-boot/.settings
+**/.settings/*
+jeecg-boot/jeecg-boot-base-common/.factorypath
+jeecg-boot/jeecg-boot-base-common/.project
+*.classpath
+*.factorypath
+*.project
+logs
