@@ -20,8 +20,8 @@ export const JeecgListMixin = {
       /* 分页参数 */
       ipagination:{
         current: 1,
-        pageSize: 10,
-        pageSizeOptions: ['10', '20', '30'],
+        pageSize: 20,
+        pageSizeOptions: ['10', '20', '30', '60', '100', '200', '500', '1000', '2000'],
         showTotal: (total, range) => {
           return range[0] + "-" + range[1] + " 共" + total + "条"
         },

@@ -231,23 +231,47 @@
         let httpurl = '/phone/agentConfig/list';
         let method = 'get';
         let formData = { params: { sysUserCode }};
+        let maxminNum = 100
         console.log("表单提交数据",formData)
         httpAction(httpurl,formData,method).then((res)=>{
           if(res.success && res.result.total > 0){
-            // 更新号码数据
-            formData = { id: row.id, isUse: "1", sysUserCode: sysUserCode };
-            console.log("表单提交数据",formData)
-            return httpAction('/phone/cmccPhoneNum/phone_select',formData,'put')
+            let config = res.result.records[0]
+            let beginTime = new Date(config.acStartTime)
+            let endTime = new Date(config.acEndTime)
+            let now = new Date()
+            maxminNum = config.acPhoneNum
+            if (now >= beginTime && now < endTime){
+              formData = { isUse: "1", sysUserCode: sysUserCode };
+              console.log("表单提交数据",formData)
+              return httpAction('/phone/cmccPhoneNum/list', formData,'get')
+            } else {
+              that.$message.warning('您不在选号时间段内，选号时间段：'+config.acStartTime+'日 - '+config.acEndTime+'日');
+              return null
+            }
+            
           }else{
             that.$message.warning(res.message);
           }
         }).then((res)=>{
-          if(res.success){
+          if(!!res && res.success){
+            if (res.result.total > 0 && res.result.total >= maxminNum){
+              that.$message.warning('您选的数量已达上限，请勿再试！');
+              return null
+            }
+            formData = { id: row.id, isUse: "1", sysUserCode: sysUserCode };
+            console.log("表单提交数据",formData)
+            return httpAction('/phone/cmccPhoneNum/phone_select',formData,'put')
+          }else if (!!res) {
+            that.$message.warning(res.message);
+            return null
+          }
+        }).then((res)=>{
+          if(!!res && res.success){
             // 更新界面
             row.sysUserCode = sysUserCode
             row.isUse = '1'
             that.$message.success(res.message);
-          }else{
+          }else if (!!res) {
             that.$message.warning(res.message);
           }
         })

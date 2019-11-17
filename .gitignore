@@ -6,3 +6,13 @@ jeecg-boot/jeecg-boot-base-common/.project
 *.factorypath
 *.project
 logs
+jeecg-boot/jeecg-boot-module-system/src/main/resources/static/css
+jeecg-boot/jeecg-boot-module-system/src/main/resources/static/img
+jeecg-boot/jeecg-boot-module-system/src/main/resources/static/js
+jeecg-boot/jeecg-boot-module-system/src/main/resources/static/tinymce
+jeecg-boot/jeecg-boot-module-system/src/main/resources/static/avatar2.jpg
+jeecg-boot/jeecg-boot-module-system/src/main/resources/static/color.less
+jeecg-boot/jeecg-boot-module-system/src/main/resources/static/goright.png
+jeecg-boot/jeecg-boot-module-system/src/main/resources/static/index.html
+jeecg-boot/jeecg-boot-module-system/src/main/resources/static/logo.png
+jeecg-boot/jeecg-boot-module-system/src/main/resources/static/v2.js
