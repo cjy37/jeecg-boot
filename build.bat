@@ -1,10 +1,17 @@
+call rd /s /q ant-design-vue-jeecg\dist
+
+call rd /s /q jeecg-boot\jeecg-boot-module-system\src\main\resources\static\css
+
+call rd /s /q jeecg-boot\jeecg-boot-module-system\src\main\resources\static\img
+
+call rd /s /q jeecg-boot\jeecg-boot-module-system\src\main\resources\static\js
+
 cd ant-design-vue-jeecg
-npm run build
+
+call npm run build
 
 cd ..
-rd /s /q jeecg-boot\jeecg-boot-module-system\src\main\resources\static\css
-rd /s /q jeecg-boot\jeecg-boot-module-system\src\main\resources\static\img
-rd /s /q jeecg-boot\jeecg-boot-module-system\src\main\resources\static\js
-xcopy /YSF ant-design-vue-jeecg\dist\*.* jeecg-boot\jeecg-boot-module-system\src\main\resources\static
+
+call xcopy /YSF ant-design-vue-jeecg\dist\*.* jeecg-boot\jeecg-boot-module-system\src\main\resources\static
 
 pause
